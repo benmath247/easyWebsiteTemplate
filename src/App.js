@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navigation from './components/Navigation';
+import Footer from './components/Footer'
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="/testimonials" element={<Testimonials testimonials={testimonials} />} />
         <Route path="/testimonials/:testimonialId" element={<TestimonialDetails testimonials={testimonials} />} />
       </Routes>
+      <Footer />
     </Router>
   );
 };

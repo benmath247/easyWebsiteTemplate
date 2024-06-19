@@ -1,0 +1,107 @@
+{
+    "navigation": {
+        "include": true,
+        "siteName": "JenniferJaroslavsky.com",
+        "items": [
+            {
+                "include": true,
+                "name": "Home",
+                "link": "/"
+            },
+            {
+                "include": true,
+                "name": "Testimonials",
+                "link": "/testimonials"
+            },
+            {
+                "include": true,
+                "name": "Blog",
+                "link": "/blog"
+            },
+            {
+                "include": true,
+                "name": "Contact",
+                "link": "/contact"
+            }
+        ]
+    },
+    "footer": {
+        "iconSpacingY": "2",
+        "iconSpacingX": "3",
+        "iconSize": "40",
+        "iconColor": "black",
+        "include": true,
+        "text": "© 2024 Jennifer Jaroslavsky. All Rights Reserved.",
+        "github": false,
+        "githubLink": "https://github.com/jennifer",
+        "linkedin": true,
+        "linkedinLink": "https://www.linkedin.com/in/jennifer",
+        "twitter": true,
+        "twitterLink": "https://twitter.com/jennifer",
+        "facebook": false,
+        "facebookLink": "https://facebook.com/jennifer",
+        "resume": true,
+        "resumeLink": "/resume.pdf",
+        "email": true,
+        "emailAddress": "jennjaros24@gmail.com"
+    },
+    "pages": {
+        "home": {
+            "include": true,
+            "h1": "Jennifer Jaroslavsky",
+            "tagline": "Operations and Project Manager | Life Sciences",
+            "firstButton": {
+                "include": true,
+                "text": "Download Resume",
+                "link": "#resume"
+            },
+            "secondButton": {
+                "include": true,
+                "text": "Contact Jennifer",
+                "link": "contact"
+            },
+            "blogsection": {
+                "include": true,
+                "preview": true,
+                "includeButton": true,
+                "buttonText": "View all blogs"
+            }
+        },
+        "contact": {
+            "include": true,
+            "header": "Contact",
+            "subheader": "Get in touch with us here.",
+            "fields": {
+                "firstName": {
+                    "include": true,
+                    "label": "First Name",
+                    "placeholder": "Enter your first name"
+                },
+                "lastName": {
+                    "include": true,
+                    "label": "Last Name",
+                    "placeholder": "Enter your last name"
+                },
+                "email": {
+                    "include": true,
+                    "label": "Email",
+                    "placeholder": "Enter your email"
+                },
+                "message": {
+                    "include": true,
+                    "label": "Message",
+                    "placeholder": "Your message"
+                },
+                "subscribe": {
+                    "include": true,
+                    "label": "Subscribe to updates from Jennifer Jaroslavsky"
+                }
+            }
+        },
+        "testimonials": {
+            "include": true,
+            "header": "Testimonials",
+            "subheader": "What people are saying"
+        }
+    }
+}

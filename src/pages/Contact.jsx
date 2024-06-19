@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
 import '../Contact.css';
 
@@ -8,13 +8,21 @@ const Contact = () => {
     const [lastName, setLastName] = useState('');
     const [message, setMessage] = useState('');
     const [subscribe, setSubscribe] = useState(false);
+    const [config, setConfig] = useState(null);
+
+    useEffect(() => {
+        fetch('/config.json')
+            .then(response => response.json())
+            .then(data => setConfig(data.pages.contact))
+            .catch(error => console.error('Error loading config:', error));
+    }, []);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
 
         const data = {
             email_address: email,
-            status: 'subscribed', // Change this as needed (e.g., 'pending' for double opt-in)
+            status: 'subscribed',
             merge_fields: {
                 FNAME: firstName,
                 LNAME: lastName
@@ -56,62 +64,78 @@ const Contact = () => {
         }
     };
 
+    if (!config) {
+        return <div>Loading...</div>;
+    }
+
     return (
-        <Container>
-            <h1>Contact</h1>
-            <p>Get in touch with us here.</p>
-            <Form onSubmit={handleSubmit}>
-                <Form.Group controlId="firstName">
-                    <Form.Label className="form-label">First Name</Form.Label>
-                    <Form.Control
-                        type="text"
-                        placeholder="Enter your first name"
-                        value={firstName}
-                        onChange={(e) => setFirstName(e.target.value)}
-                    />
-                </Form.Group>
-                <Form.Group controlId="lastName">
-                    <Form.Label className="form-label">Last Name</Form.Label>
-                    <Form.Control
-                        type="text"
-                        placeholder="Enter your last name"
-                        value={lastName}
-                        onChange={(e) => setLastName(e.target.value)}
-                    />
-                </Form.Group>
-                <Form.Group controlId="email">
-                    <Form.Label className="form-label">Email</Form.Label>
-                    <Form.Control
-                        type="email"
-                        placeholder="Enter your email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                </Form.Group>
-                <Form.Group controlId="message">
-                    <Form.Label className="form-label">Message</Form.Label>
-                    <Form.Control
-                        as="textarea"
-                        rows={3}
-                        placeholder="Your message"
-                        value={message}
-                        onChange={(e) => setMessage(e.target.value)}
-                    />
-                </Form.Group>
-                <Form.Group controlId="subscribe">
-                    <Form.Check
-                        type="checkbox"
-                        label="Subscribe to updates from Jennifer Jaroslavsky"
-                        checked={subscribe}
-                        className='form-checkbox'
-                        onChange={(e) => setSubscribe(e.target.checked)}
-                    />
-                </Form.Group>
-                <Button variant="primary" type="submit" className="button-margin">
-                    Submit
-                </Button>
-            </Form>
-        </Container>
+        config.include && (
+            <Container>
+                <h1>{config.header}</h1>
+                <p>{config.subheader}</p>
+                <Form onSubmit={handleSubmit}>
+                    {config.fields.firstName.include && (
+                        <Form.Group controlId="firstName">
+                            <Form.Label className="form-label">{config.fields.firstName.label}</Form.Label>
+                            <Form.Control
+                                type="text"
+                                placeholder={config.fields.firstName.placeholder}
+                                value={firstName}
+                                onChange={(e) => setFirstName(e.target.value)}
+                            />
+                        </Form.Group>
+                    )}
+                    {config.fields.lastName.include && (
+                        <Form.Group controlId="lastName">
+                            <Form.Label className="form-label">{config.fields.lastName.label}</Form.Label>
+                            <Form.Control
+                                type="text"
+                                placeholder={config.fields.lastName.placeholder}
+                                value={lastName}
+                                onChange={(e) => setLastName(e.target.value)}
+                            />
+                        </Form.Group>
+                    )}
+                    {config.fields.email.include && (
+                        <Form.Group controlId="email">
+                            <Form.Label className="form-label">{config.fields.email.label}</Form.Label>
+                            <Form.Control
+                                type="email"
+                                placeholder={config.fields.email.placeholder}
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+                        </Form.Group>
+                    )}
+                    {config.fields.message.include && (
+                        <Form.Group controlId="message">
+                            <Form.Label className="form-label">{config.fields.message.label}</Form.Label>
+                            <Form.Control
+                                as="textarea"
+                                rows={3}
+                                placeholder={config.fields.message.placeholder}
+                                value={message}
+                                onChange={(e) => setMessage(e.target.value)}
+                            />
+                        </Form.Group>
+                    )}
+                    {config.fields.subscribe.include && (
+                        <Form.Group controlId="subscribe">
+                            <Form.Check
+                                type="checkbox"
+                                label={config.fields.subscribe.label}
+                                checked={subscribe}
+                                className='form-checkbox'
+                                onChange={(e) => setSubscribe(e.target.checked)}
+                            />
+                        </Form.Group>
+                    )}
+                    <Button variant="primary" type="submit" className="button-margin">
+                        Submit
+                    </Button>
+                </Form>
+            </Container>
+        )
     );
 };
 

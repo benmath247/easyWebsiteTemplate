@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Container } from 'react-bootstrap';
 import '../App.css';
@@ -6,39 +6,55 @@ import Blog from './blog/Blog';
 import { Link } from 'react-router-dom';
 
 export default function Home({ blogs }) {
+    const [config, setConfig] = useState(null);
+
+    useEffect(() => {
+        fetch('/config.json')
+            .then(response => response.json())
+            .then(data => setConfig(data.pages.home))
+            .catch(error => console.error('Error loading config:', error));
+    }, []);
+
+    if (!config) {
+        return <div>Loading...</div>;
+    }
+
     return (
         <div>
-            <section className="jumbotron text-center bg-dark text-white py-5">
-                <Container>
-                    <h1>Jennifer Jaroslavsky</h1>
-                    <p>Operations and Project Manager | Life Sciences</p>
-                    <div className="d-flex justify-content-center">
-                        <a href="#about" className="mx-2">
-                            <button className="btn btn-primary">Download Resume</button>
-                        </a>
-                        <a href="contact" className="mx-2">
-                            <button className="btn btn-secondary">Contact Jennifer</button>
-                        </a>
-                    </div>
-                </Container>
-            </section>
-            <Blog preview={true} blogs={blogs} />
-            <section>
-                <Container>
-                    <div className="d-flex justify-content-center py-3">
-                        <Link to={"blog"}>
-                            <Button className='btn-lg'>View all blogs</Button>
-
-                        </Link>
-                    </div>
-
-                </Container>
-            </section>
-            <footer className="text-center py-4 bg-light">
-                <Container>
-                    <p>&copy; 2024 Jennifer Jaroslavsky. All Rights Reserved.</p>
-                </Container>
-            </footer>
+            {config.include && (
+                <>
+                    <section className="jumbotron text-center bg-dark text-white py-5">
+                        <Container>
+                            <h1>{config.h1}</h1>
+                            <p>{config.tagline}</p>
+                            <div className="d-flex justify-content-center">
+                                {config.firstButton.include && (
+                                    <a href={config.firstButton.link} className="mx-2">
+                                        <button className="btn btn-primary">{config.firstButton.text}</button>
+                                    </a>
+                                )}
+                                {config.secondButton.include && <a href={config.secondButton.link} className="mx-2">
+                                    <button className="btn btn-secondary">{config.secondButton.text}</button>
+                                </a>}
+                            </div>
+                        </Container>
+                    </section>
+                    {config.blogsection.include && (
+                        <Blog preview={config.blogsection.preview} blogs={blogs} />
+                    )}
+                    {config.blogsection.include && config.blogsection.includeButton && (
+                        <section>
+                            <Container>
+                                <div className="d-flex justify-content-center py-3">
+                                    <Link to={"blog"}>
+                                        <Button className='btn-lg'>{config.blogsection.buttonText}</Button>
+                                    </Link>
+                                </div>
+                            </Container>
+                        </section>
+                    )}
+                </>
+            )}
         </div>
     );
 }
