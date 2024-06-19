@@ -12,7 +12,7 @@ const Testimonials = ({ testimonials }) => {
             <Row>
                 {testimonials.length > 0 ? (
                     testimonials.map((testimonial, index) => (
-                        <Col key={testimonial.email} xs={12} sm={6} md={4} lg={3} className="d-flex justify-content-center mb-4">
+                        <Col key={testimonial.email} xs={12} sm={6} md={4} lg={4} className="d-flex justify-content-center mb-4">
                             <Link to={`/testimonials/${index}`} className="text-decoration-none">
                                 <div className="d-flex flex-column align-items-center testimonial-item">
                                     <Image src={testimonial.image} roundedCircle className="mb-3" />

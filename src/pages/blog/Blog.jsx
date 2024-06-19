@@ -2,7 +2,11 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
 
-const Blog = ({ blogs }) => {
+const Blog = ({ blogs, preview }) => {
+
+    if (preview) {
+        blogs = blogs.slice(0, 3)
+    }
     return (
         <div className="container mt-4">
             <div className="row">
