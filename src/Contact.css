@@ -1,0 +1,23 @@
+.button-margin {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.form-label {
+    font-weight: bold;
+    color: #007bff;
+    /* Bootstrap primary color */
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.form-label:hover {
+    color: #0056b3;
+    /* Darker shade of the primary color */
+}
+
+.form-checkbox {
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
