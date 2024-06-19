@@ -2,8 +2,9 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'react-bootstrap';
 import '../App.css';
+import Blog from './blog/Blog';
 
-export default function Home() {
+export default function Home({ blogs }) {
     return (
         <div>
             <section className="jumbotron text-center bg-dark text-white py-5">
@@ -20,6 +21,7 @@ export default function Home() {
                     </div>
                 </Container>
             </section>
+            <Blog blogs={blogs} />
             <footer className="text-center py-4 bg-light">
                 <Container>
                     <p>&copy; 2024 Jennifer Jaroslavsky. All Rights Reserved.</p>

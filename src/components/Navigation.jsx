@@ -13,9 +13,9 @@ const Navigation = () => {
                         <LinkContainer to="/">
                             <Nav.Link>Home</Nav.Link>
                         </LinkContainer>
-                        <LinkContainer to="/about">
+                        {/* <LinkContainer to="/about">
                             <Nav.Link>About</Nav.Link>
-                        </LinkContainer>
+                        </LinkContainer> */}
                         <LinkContainer to="/testimonials">
                             <Nav.Link>Testimonials</Nav.Link>
                         </LinkContainer>
