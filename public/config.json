@@ -10,6 +10,11 @@
             },
             {
                 "include": true,
+                "name": "FAQ",
+                "link": "/faq"
+            },
+            {
+                "include": true,
                 "name": "Testimonials",
                 "link": "/testimonials"
             },
@@ -36,7 +41,7 @@
         "githubLink": "https://github.com/jennifer",
         "linkedin": true,
         "linkedinLink": "https://www.linkedin.com/in/jennifer",
-        "twitter": true,
+        "twitter": false,
         "twitterLink": "https://twitter.com/jennifer",
         "facebook": false,
         "facebookLink": "https://facebook.com/jennifer",
@@ -102,6 +107,24 @@
             "include": true,
             "header": "Testimonials",
             "subheader": "What people are saying"
+        },
+        "faq": {
+            "include": true,
+            "header": "Frequently Asked Questions",
+            "questions": [
+                {
+                    "question": "What is your expertise?",
+                    "answer": "I specialize in operations and project management within the life sciences sector."
+                },
+                {
+                    "question": "How can I contact you?",
+                    "answer": "You can contact me through the Contact page on this website or via email at jennjaros24@gmail.com."
+                },
+                {
+                    "question": "Do you offer consulting services?",
+                    "answer": "Yes, I offer consulting services. Please reach out to me for more details."
+                }
+            ]
         }
     }
 }

@@ -11,6 +11,7 @@ import TestimonialDetails from './pages/testimonials/TestimonialDetails';
 import testimonials from './pages/testimonials/TestimonialsList.json'
 import blogs from './pages/blog/blogsList.json'
 import BlogDetails from './pages/blog/BlogDetails';
+import FAQ from './pages/FAQ';
 
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/" element={<Home blogs={blogs} />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/faq" element={<FAQ />} />
         <Route path="/blog" element={<Blog blogs={blogs} preview={false} />} />
         <Route path="/blog/:blogId" element={<BlogDetails blogs={blogs} />} />
         <Route path="/testimonials" element={<Testimonials testimonials={testimonials} />} />
