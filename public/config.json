@@ -34,13 +34,13 @@
         "iconSpacingY": "2",
         "iconSpacingX": "3",
         "iconSize": "40",
-        "iconColor": "black",
+        "iconColor": "#191A43",
         "include": true,
         "text": "© 2024 Jennifer Jaroslavsky. All Rights Reserved.",
         "github": false,
         "githubLink": "https://github.com/jennifer",
         "linkedin": true,
-        "linkedinLink": "https://www.linkedin.com/in/jennifer",
+        "linkedinLink": "https://www.linkedin.com/in/jennifer-jaroslavsky-46663b95/",
         "twitter": false,
         "twitterLink": "https://twitter.com/jennifer",
         "facebook": false,
@@ -106,23 +106,51 @@
         "testimonials": {
             "include": true,
             "header": "Testimonials",
-            "subheader": "What people are saying"
+            "subheader": "Hear from people who have collaborated with me in the past or contact me directly to request references."
         },
         "faq": {
             "include": true,
             "header": "Frequently Asked Questions",
             "questions": [
                 {
-                    "question": "What is your expertise?",
-                    "answer": "I specialize in operations and project management within the life sciences sector."
+                    "question": "What is your professional background?",
+                    "answer": "I have extensive experience in healthcare operations, scientific research management, and strategic leadership. My recent roles include Senior Manager of Scientific Operations and Interim Chief of Staff at the Alzheimer’s Drug Discovery Foundation (ADDF)."
                 },
                 {
-                    "question": "How can I contact you?",
-                    "answer": "You can contact me through the Contact page on this website or via email at jennjaros24@gmail.com."
+                    "question": "What are some of your key achievements?",
+                    "answer": "I have successfully managed a $12M Alzheimer's biomarker-focused clinical trial, overseen a 120-patient medical practice, and led a team of 30-40 staff members. Additionally, I have implemented efficiency-building processes and led cross-functional teams to achieve significant project milestones."
                 },
                 {
-                    "question": "Do you offer consulting services?",
-                    "answer": "Yes, I offer consulting services. Please reach out to me for more details."
+                    "question": "What motivates you in your professional career?",
+                    "answer": "I am passionate about improving healthcare outcomes, advancing medical innovations, and supporting organizational missions that positively impact society."
+                },
+                {
+                    "question": "What do you find most rewarding about working in healthcare and life sciences?",
+                    "answer": "The most rewarding aspect is the ability to contribute to meaningful advancements that improve patient care and outcomes. Whether it's through managing clinical trials, supporting medical practices, or leading teams, knowing that my work helps people live healthier lives is incredibly fulfilling."
+                },
+                {
+                    "question": "What is your approach to strategic leadership?",
+                    "answer": "My approach to strategic leadership involves clear communication, collaborative teamwork, and data-driven decision-making. I believe in setting clear goals, empowering team members, and fostering an environment of continuous improvement to achieve organizational success."
+                },
+                {
+                    "question": "Why are you drawn to positions in executive support and strategic leadership?",
+                    "answer": "I am driven by the opportunity to support and empower executives in achieving their goals. My background in administrative support and strategic planning enables me to provide effective leadership and drive organizational success."
+                },
+                {
+                    "question": "What skills have you developed in your recent roles?",
+                    "answer": "In recent roles, I've developed strong skills in leading cross-functional teams, managing budgets, and ensuring project success through effective coordination and communication. I've also refined my ability to build and maintain stakeholder relationships."
+                },
+                {
+                    "question": "What makes you a strong candidate for leadership roles?",
+                    "answer": "My ability to navigate challenges, drive projects forward, and deliver results make me well-suited for leadership roles. I excel in fostering collaboration, motivating teams, and executing strategies that achieve organizational objectives."
+                },
+                {
+                    "question": "What excites you about joining new organizations?",
+                    "answer": "I am excited to bring my expertise and passion to new teams, contributing to their success and growth. Working in dynamic environments where I can make a meaningful impact and drive positive change is particularly exciting."
+                },
+                {
+                    "question": "What else should you we know about you?",
+                    "asnwer": ""
                 }
             ]
         }

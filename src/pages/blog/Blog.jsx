@@ -13,7 +13,7 @@ const Blog = ({ blogs, preview }) => {
                     <div key={index} className="col-md-4 mb-4">
                         <Link to={`/blog/${index}`} className="text-decoration-none">
                             <div className="card blog-card">
-                                <img src={blog.image} className="card-img-top" alt={blog.title} />
+                                <img src={blog.image} className="card-img-top" style={{ height: "100%" }} alt={blog.title} />
                                 <div className="card-body blog-card-body">
                                     <h5 className="card-title blog-card-title">
                                         <a href={blog['file-source']} target="_blank" rel="noopener noreferrer">

@@ -4,6 +4,7 @@ import { Button, Container } from 'react-bootstrap';
 import '../App.css';
 import Blog from './blog/Blog';
 import { Link } from 'react-router-dom';
+import './Home.css'
 
 export default function Home({ blogs }) {
     const [config, setConfig] = useState(null);
@@ -23,7 +24,7 @@ export default function Home({ blogs }) {
         <div>
             {config.include && (
                 <>
-                    <section className="jumbotron text-center bg-dark text-white py-5">
+                    <section className="jumbotron text-center bg-dark text-white py-5 gradient-background">
                         <Container>
                             <h1>{config.h1}</h1>
                             <p>{config.tagline}</p>

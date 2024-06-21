@@ -1,37 +1,9 @@
 [
     {
-        "file-source": "/exampleblog.html",
-        "image": "https://via.placeholder.com/150",
-        "title": "TITLE!!",
-        "preview": "THIS IS THE PREVIEW",
-        "date": "September 25th, 1992"
-    },
-    {
-        "file-source": "/exampleblog.html",
-        "image": "https://via.placeholder.com/150",
-        "title": "TITLE!!",
-        "preview": "THIS IS THE PREVIEW",
-        "date": "September 25th, 1992"
-    },
-    {
-        "file-source": "/exampleblog.html",
-        "image": "https://via.placeholder.com/150",
-        "title": "TITLE!!",
-        "preview": "THIS IS THE PREVIEW",
-        "date": "September 25th, 1992"
-    },
-    {
-        "file-source": "/exampleblog.html",
-        "image": "https://via.placeholder.com/150",
-        "title": "TITLE!!",
-        "preview": "THIS IS THE PREVIEW",
-        "date": "September 25th, 1992"
-    },
-    {
-        "file-source": "/exampleblog.html",
-        "image": "https://via.placeholder.com/150",
-        "title": "TITLE!!",
-        "preview": "THIS IS THE PREVIEW",
-        "date": "September 25th, 1992"
+        "file-source": "/blogs/helloworld.html",
+        "image": "/blogs/helloworld.jpg",
+        "title": "Hello, World!",
+        "preview": "",
+        "date": "June 20th, 2024"
     }
 ]
