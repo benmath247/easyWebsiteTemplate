@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Container, Image, Row, Col } from 'react-bootstrap';
+import { Container, Image, Row, Col, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const TestimonialDetails = ({ testimonials }) => {
     const { testimonialId } = useParams();
@@ -40,22 +41,28 @@ const TestimonialDetails = ({ testimonials }) => {
 
     return (
         <Container>
-            <Row className="justify-content-center my-5">
-                <Col md={6} className="d-flex flex-column align-items-center">
-                    {testimonial && (
-                        <>
+            <Row className="my-5 justify-content-center">
+                {testimonial && (
+                    <>
+                        <Col md={8} className="d-flex flex-column align-items-center">
                             <Image src={testimonial.image} roundedCircle className="mb-3" />
-                            <h1>{testimonial.name}</h1>
-                            <p className="text-center">{testimonial.text}</p>
+                            <h2>{testimonial.name}</h2>
+                            <p className="">{testimonial.text}</p>
                             <h6>
-                                <Image src={testimonial.companyLogo} roundedCircle className="mr-2" />
+                                <Image src={testimonial.companyLogo} roundedCircle className="" />
                                 {testimonial.position}
                             </h6>
-                            <p>Email: {testimonial.email}</p>
-                            <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
-                        </>
-                    )}
-                </Col>
+                        </Col>
+                        <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+                        <Link to="/testimonials">
+                            <Button>Back to All Testimonials</Button>
+                        </Link>
+                        <Link to="/contact" className='m-2'>
+                            <Button className='btn-secondary'>Contact for References</Button>
+                        </Link>
+                    </>
+                )}
+                {/* </Col> */}
             </Row>
         </Container>
     );

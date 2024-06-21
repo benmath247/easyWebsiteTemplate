@@ -1,92 +1,38 @@
 [
     {
-        "name": "John Doe",
-        "text": "This is an amazing product! It changed my life.",
-        "position": "Boss who loves Jen at somewhere awesome",
-        "image": "https://via.placeholder.com/150",
-        "file-source": "/loremipsum.html",
+        "name": "Lakita Cavin",
+        "text": "",
+        "position": "Attorney at Alzheimer's Drug Discovery Foundation",
+        "image": "https://media.licdn.com/dms/image/C4D03AQFQSDux-wxHIg/profile-displayphoto-shrink_100_100/0/1648607071901?e=1724284800&v=beta&t=Q0SPCxfJtri-okGH1oAL0tQiBEQN40RrXyasL_TEiU8",
+        "file-source": "/testimonials/lakita.html",
         "email": "john.doe@example.com",
-        "companyLogo": "https://via.placeholder.com/30"
+        "companyLogo": "https://media.licdn.com/dms/image/C4D0BAQH4GAujq2_YfA/company-logo_100_100/0/1631332280022?e=1726704000&v=beta&t=MRMbmJVD4TPk_Yi5RA8koywpVOqqcbpUjLMSpDqnkZg"
     },
     {
-        "name": "John Doe",
-        "text": "This is an amazing product! It changed my life.",
-        "position": "Boss who loves Jen at somewhere awesome",
-        "image": "https://via.placeholder.com/150",
-        "file-source": "/loremipsum.html",
+        "name": "Alexandra Brackenheimer",
+        "text": "",
+        "position": "Assistant Director, SpeechDx at Alzheimer's Drug Discovery Foundation",
+        "image": "https://media.licdn.com/dms/image/C5603AQFxupLz_RNidA/profile-displayphoto-shrink_100_100/0/1516346623463?e=1724284800&v=beta&t=dR59LMXOpCYoYDBzqZT7ovlbPUkdtQnSazCagp7xfBk",
+        "file-source": "/testimonials/sasha.html",
         "email": "john.doe@example.com",
-        "companyLogo": "https://via.placeholder.com/30"
+        "companyLogo": "https://media.licdn.com/dms/image/C4D0BAQH4GAujq2_YfA/company-logo_100_100/0/1631332280022?e=1726704000&v=beta&t=MRMbmJVD4TPk_Yi5RA8koywpVOqqcbpUjLMSpDqnkZg"
     },
     {
-        "name": "John Doe",
-        "text": "This is an amazing product! It changed my life.",
-        "position": "Boss who loves Jen at somewhere awesome",
-        "file-source": "/loremipsum.html",
-        "image": "https://via.placeholder.com/150",
+        "name": "Kristina Malzbender",
+        "text": "",
+        "position": "Associate Director, Health and Life Sciences at Gates Ventures",
+        "file-source": "/testimonials/kristina.html",
+        "image": "https://media.licdn.com/dms/image/C4E03AQG7_nbP7iy-UA/profile-displayphoto-shrink_100_100/0/1597339711757?e=1724284800&v=beta&t=PS0gL240iuzSrl_95zFygWe1Sd5J8PVsNOZj-MGG03I",
         "email": "john.doe@example.com",
-        "companyLogo": "https://via.placeholder.com/30"
+        "companyLogo": "https://media.licdn.com/dms/image/C560BAQEDzvKyheA-mA/company-logo_100_100/0/1630593328460/bgc3_logo?e=1726704000&v=beta&t=aFgDe0Fpbi8oNFWpYP0GcQX9f8oohdH7h26tDYZHJBY"
     },
     {
-        "name": "John Doe",
-        "text": "This is an amazing product! It changed my life.",
-        "position": "Boss who loves Jen at somewhere awesome",
-        "file-source": "/loremipsum.html",
-        "image": "https://via.placeholder.com/150",
+        "name": "Amal Hechehouche, MPH",
+        "text": "",
+        "position": "Program Director, Start Early",
+        "file-source": "/testimonials/amal.html",
+        "image": "https://media.licdn.com/dms/image/D5603AQE8V29wRh1SNQ/profile-displayphoto-shrink_400_400/0/1683661765595?e=1724284800&v=beta&t=lQ8Ic7iY7dV-BRDZUKYgxQY3C_lukCWkG-0sAxGDK3o",
         "email": "john.doe@example.com",
-        "companyLogo": "https://via.placeholder.com/30"
-    },
-    {
-        "name": "John Doe",
-        "text": "This is an amazing product! It changed my life.",
-        "file-source": "/loremipsum.html",
-        "position": "Boss who loves Jen at somewhere awesome",
-        "image": "https://via.placeholder.com/150",
-        "email": "john.doe@example.com",
-        "companyLogo": "https://via.placeholder.com/30"
-    },
-    {
-        "name": "John Doe",
-        "text": "This is an amazing product! It changed my life.",
-        "position": "Boss who loves Jen at somewhere awesome",
-        "image": "https://via.placeholder.com/150",
-        "file-source": "/loremipsum.html",
-        "email": "john.doe@example.com",
-        "companyLogo": "https://via.placeholder.com/30"
-    },
-    {
-        "name": "John Doe",
-        "text": "This is an amazing product! It changed my life.",
-        "position": "Boss who loves Jen at somewhere awesome",
-        "image": "https://via.placeholder.com/150",
-        "file-source": "/loremipsum.html",
-        "email": "john.doe@example.com",
-        "companyLogo": "https://via.placeholder.com/30"
-    },
-    {
-        "name": "John Doe",
-        "text": "This is an amazing product! It changed my life.",
-        "position": "Boss who loves Jen at somewhere awesome",
-        "image": "https://via.placeholder.com/150",
-        "file-source": "/loremipsum.html",
-        "email": "john.doe@example.com",
-        "companyLogo": "https://via.placeholder.com/30"
-    },
-    {
-        "name": "John Doe",
-        "text": "This is an amazing product! It changed my life.",
-        "position": "Boss who loves Jen at somewhere awesome",
-        "image": "https://via.placeholder.com/150",
-        "file-source": "/loremipsum.html",
-        "email": "john.doe@example.com",
-        "companyLogo": "https://via.placeholder.com/30"
-    },
-    {
-        "name": "John Doe",
-        "text": "This is an amazing product! It changed my life.",
-        "position": "Boss who loves Jen at somewhere awesome",
-        "image": "https://via.placeholder.com/150",
-        "file-source": "/loremipsum.html",
-        "email": "john.doe@example.com",
-        "companyLogo": "https://via.placeholder.com/30"
+        "companyLogo": "https://media.licdn.com/dms/image/C560BAQEVO3gVUddGhQ/company-logo_100_100/0/1630653880366/startearlyorg_logo?e=1726704000&v=beta&t=BwMMfauB0_tq6gDIb5SpRHquxFcq02fRlzVXav3rfZI"
     }
 ]
