@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
+import './Navigation.css'
 
 const Navigation = () => {
     const [config, setConfig] = useState(null);
@@ -18,23 +19,29 @@ const Navigation = () => {
 
     return (
         config.include && (
-            <Navbar bg="light" expand="lg">
-                <Container>
-                    <Navbar.Brand href="/">{config.siteName}</Navbar.Brand>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="me-auto">
-                            {config.items.map((item, index) =>
-                                item.include && (
-                                    <LinkContainer key={index} to={item.link}>
-                                        <Nav.Link>{item.name}</Nav.Link>
-                                    </LinkContainer>
-                                )
-                            )}
-                        </Nav>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>
+            <div className='custom-nav'>
+                <Navbar expand="lg" >
+                    <Container>
+                        <Navbar.Brand href="/">
+                            <span className='site-name'>
+                                {config.siteName}
+                            </span></Navbar.Brand>
+                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                        <Navbar.Collapse id="basic-navbar-nav">
+                            <Nav className="me-auto">
+                                {config.items.map((item, index) =>
+                                    item.include && (
+                                        <LinkContainer key={index} to={item.link}>
+                                            <Nav.Link><span className='nav-link'>
+                                                {item.name}
+                                            </span></Nav.Link>
+                                        </LinkContainer>
+                                    )
+                                )}
+                            </Nav>
+                        </Navbar.Collapse>
+                    </Container>
+                </Navbar></div >
         )
     );
 };
