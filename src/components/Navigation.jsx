@@ -14,7 +14,7 @@ const Navigation = () => {
     }, []);
 
     if (!config) {
-        return <div>Loading...</div>;
+        return <div></div>;
     }
 
     return (

@@ -14,7 +14,7 @@ const Testimonials = ({ testimonials }) => {
     }, []);
 
     if (!config) {
-        return <div>Loading...</div>;
+        return <div></div>;
     }
 
     return (

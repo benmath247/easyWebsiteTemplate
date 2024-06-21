@@ -65,7 +65,7 @@ const Contact = () => {
     };
 
     if (!config) {
-        return <div>Loading...</div>;
+        return <div></div>;
     }
 
     return (

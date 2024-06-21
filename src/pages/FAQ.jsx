@@ -13,7 +13,7 @@ export default function FAQ() {
     }, []);
 
     if (!config) {
-        return <div>Loading...</div>;
+        return <div></div>;
     }
 
     return (

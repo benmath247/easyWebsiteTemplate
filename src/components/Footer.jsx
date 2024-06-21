@@ -15,7 +15,7 @@ export default function Home({ blogs }) {
     }, []);
 
     if (!config) {
-        return <div>Loading...</div>;
+        return <div></div>;
     }
 
     return (
