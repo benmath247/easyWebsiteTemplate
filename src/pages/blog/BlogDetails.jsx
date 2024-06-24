@@ -17,9 +17,12 @@ const BlogDetails = ({ blogs }) => {
             if (blog) {
                 try {
                     const response = await fetch(blog["file-source"]);
+                    console.log(blog["file-source"])
                     if (response.ok) {
                         const html = await response.text();
+                        console.log(html)
                         setHtmlContent(html);
+                        console.log(htmlContent)
                     } else {
                         console.error('Failed to fetch HTML content');
                     }

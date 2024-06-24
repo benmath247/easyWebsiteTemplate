@@ -5,6 +5,7 @@ import '../App.css';
 import Blog from './blog/Blog';
 import { Link } from 'react-router-dom';
 import './Home.css'
+import ExampleComponent from './ExampleAPICall';
 
 export default function Home({ blogs }) {
     const [config, setConfig] = useState(null);
@@ -38,6 +39,7 @@ export default function Home({ blogs }) {
                                     <button className="btn btn-secondary">{config.secondButton.text}</button>
                                 </a>}
                             </div>
+                            <ExampleComponent />
                         </Container>
                     </section>
                     {config.blogsection.include && (
