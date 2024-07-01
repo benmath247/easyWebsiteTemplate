@@ -58,7 +58,7 @@
             "firstButton": {
                 "include": true,
                 "text": "Download Resume",
-                "link": "#resume"
+                "link": "/resume.pdf"
             },
             "secondButton": {
                 "include": true,
