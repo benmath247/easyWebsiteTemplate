@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Blog.css'; // Import the custom CSS file
 import { Link } from 'react-router-dom';
 
-const Blog = ({ blogs, preview }) => {
+const Blog = ({ preview }) => {
+    const [blogs, setBlogs] = useState([]);
+    const [include, setInclude] = useState(false);
+    const [buttonText, setButtonText] = useState("");
+
+    useEffect(() => {
+        fetch('https://starfish-app-yfq49.ondigitalocean.app/sites/blog/1/')
+            .then(response => response.json())
+            .then(data => {
+                setBlogs(data.blogs);
+                setInclude(data.include);
+                setButtonText(data.button);
+            })
+            .catch(error => console.error('Error fetching blog data:', error));
+    }, []);
+
     const displayBlogs = preview ? blogs.slice(0, 3) : blogs;
 
     return (
@@ -11,7 +26,7 @@ const Blog = ({ blogs, preview }) => {
             <div className="row">
                 {displayBlogs.map((blog, index) => (
                     <div key={index} className="col-md-4 mb-4">
-                        <Link to={`/blog/${index}`} className="text-decoration-none">
+                        <Link to={`/blog/${blog.id}`} className="text-decoration-none">
                             <div className="card blog-card">
                                 <img src={blog.image} className="card-img-top" style={{ height: "100%" }} alt={blog.title} />
                                 <div className="card-body blog-card-body">
@@ -20,7 +35,7 @@ const Blog = ({ blogs, preview }) => {
                                             {blog.title}
                                         </a>
                                     </h5>
-                                    <p className="card-text blog-card-text">{blog.preview}</p>
+                                    <p className="card-text blog-card-text">{blog.text}</p>
                                 </div>
                                 <div className="card-footer blog-card-footer">
                                     <small className="text-muted">{blog.date}</small>
@@ -30,6 +45,11 @@ const Blog = ({ blogs, preview }) => {
                     </div>
                 ))}
             </div>
+            {include && (
+                <div className="text-center">
+                    <Link to="/all-blogs" className="btn btn-primary">{buttonText}</Link>
+                </div>
+            )}
         </div>
     );
 };

@@ -2,27 +2,34 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Container, Card } from 'react-bootstrap';
 
-const BlogDetails = ({ blogs }) => {
+const BlogDetails = () => {
     const { blogId } = useParams();
     const [blog, setBlog] = useState(null);
     const [htmlContent, setHtmlContent] = useState(null);
 
     useEffect(() => {
-        const selectedBlog = blogs[blogId];
-        setBlog(selectedBlog);
-    }, [blogId, blogs]);
+        const fetchBlog = async () => {
+            try {
+                const response = await fetch('https://starfish-app-yfq49.ondigitalocean.app/sites/blog/1/');
+                const data = await response.json();
+                const selectedBlog = data.blogs.find(b => b.id === parseInt(blogId));
+                setBlog(selectedBlog);
+            } catch (error) {
+                console.error('Error fetching blog data:', error);
+            }
+        };
+
+        fetchBlog();
+    }, [blogId]);
 
     useEffect(() => {
         const fetchHtmlContent = async () => {
             if (blog) {
                 try {
                     const response = await fetch(blog["file-source"]);
-                    console.log(blog["file-source"])
                     if (response.ok) {
                         const html = await response.text();
-                        console.log(html)
                         setHtmlContent(html);
-                        console.log(htmlContent)
                     } else {
                         console.error('Failed to fetch HTML content');
                     }
