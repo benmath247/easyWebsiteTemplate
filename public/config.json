@@ -46,7 +46,7 @@
         "facebook": false,
         "facebookLink": "https://facebook.com/jennifer",
         "resume": true,
-        "resumeLink": "/resume.pdf",
+        "resumeLink": "https://docs.google.com/document/d/1Eq8wNan6t8swepYK3_BnCBGvAyE-7bRP/edit",
         "email": true,
         "emailAddress": "jennjaros24@gmail.com"
     },
@@ -58,7 +58,7 @@
             "firstButton": {
                 "include": true,
                 "text": "Download Resume",
-                "link": "/resume.pdf"
+                "link": "https://docs.google.com/document/d/1Eq8wNan6t8swepYK3_BnCBGvAyE-7bRP/edit"
             },
             "secondButton": {
                 "include": true,
