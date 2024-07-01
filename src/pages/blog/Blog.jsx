@@ -35,7 +35,7 @@ const Blog = ({ preview }) => {
                                             {blog.title}
                                         </a>
                                     </h5>
-                                    <p className="card-text blog-card-text">{blog.text}</p>
+                                    {/* <p className="card-text blog-card-text">{blog.text}</p> */}
                                 </div>
                                 <div className="card-footer blog-card-footer">
                                     <small className="text-muted">{blog.date}</small>

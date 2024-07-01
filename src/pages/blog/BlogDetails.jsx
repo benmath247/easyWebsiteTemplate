@@ -22,26 +22,6 @@ const BlogDetails = () => {
         fetchBlog();
     }, [blogId]);
 
-    useEffect(() => {
-        const fetchHtmlContent = async () => {
-            if (blog) {
-                try {
-                    const response = await fetch(blog["file-source"]);
-                    if (response.ok) {
-                        const html = await response.text();
-                        setHtmlContent(html);
-                    } else {
-                        console.error('Failed to fetch HTML content');
-                    }
-                } catch (error) {
-                    console.error('Error fetching HTML content', error);
-                }
-            }
-        };
-
-        fetchHtmlContent();
-    }, [blog]);
-
     return (
         <Container className="my-5">
             {blog && (
@@ -54,7 +34,7 @@ const BlogDetails = () => {
                     <Card.Body>
                         <Card.Title>{blog.title}</Card.Title>
                         <Card.Subtitle className="text-muted mb-4">{blog.date}</Card.Subtitle>
-                        <div dangerouslySetInnerHTML={{ __html: htmlContent }} className="blog-content" />
+                        <div dangerouslySetInnerHTML={{ __html: blog.text }} className="blog-content" />
                     </Card.Body>
                 </Card>
             )}
