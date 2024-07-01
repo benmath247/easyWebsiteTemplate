@@ -39,7 +39,6 @@ export default function Home({ blogs }) {
                                     <button className="btn btn-secondary">{config.secondButton.text}</button>
                                 </a>}
                             </div>
-                            <ExampleComponent />
                         </Container>
                     </section>
                     {config.blogsection.include && (

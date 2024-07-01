@@ -6,9 +6,9 @@ export default function FAQ() {
     const [config, setConfig] = useState(null);
 
     useEffect(() => {
-        fetch('/config.json')
+        fetch('https://starfish-app-yfq49.ondigitalocean.app/sites/faq/1/')
             .then(response => response.json())
-            .then(data => setConfig(data.pages.faq))
+            .then(data => setConfig(data))
             .catch(error => console.error('Error loading config:', error));
     }, []);
 
@@ -25,7 +25,7 @@ export default function FAQ() {
                         <Card key={index}>
                             <Accordion.Item eventKey={String(index)}>
                                 <Accordion.Header>{item.question}</Accordion.Header>
-                                <Accordion.Body>{item.answer}</Accordion.Body>
+                                <Accordion.Body dangerouslySetInnerHTML={{ __html: item.answer }} />
                             </Accordion.Item>
                         </Card>
                     ))}
