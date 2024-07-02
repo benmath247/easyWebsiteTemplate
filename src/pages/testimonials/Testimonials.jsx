@@ -3,19 +3,25 @@ import { Container, Image, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Testimonials.css';
 
-const Testimonials = ({ testimonials }) => {
+const Testimonials = () => {
     const [config, setConfig] = useState(null);
 
     useEffect(() => {
-        fetch('/config.json')
+        fetch('https://starfish-app-yfq49.ondigitalocean.app/sites/testimonials/1/')
             .then(response => response.json())
-            .then(data => setConfig(data.pages.testimonials))
-            .catch(error => console.error('Error loading config:', error));
+            .then(data => {
+                setConfig(data);
+            })
+            .catch(error => console.error('Error fetching blog data:', error));
     }, []);
 
     if (!config) {
         return <div></div>;
     }
+
+    const testimonials = config.testimonials;
+
+    console.log(testimonials)
 
     return (
         config.include && (
@@ -28,12 +34,12 @@ const Testimonials = ({ testimonials }) => {
                             <Col key={testimonial.email} xs={12} sm={6} md={4} lg={4} className="d-flex justify-content-center mb-4">
                                 <Link to={`/testimonials/${index}`} className="text-decoration-none" style={{ "width": "100%", "height": "250px" }}>
                                     <div className="d-flex flex-column align-items-center testimonial-item" >
-                                        <Image src={testimonial.image} roundedCircle className="mb-3" />
+                                        <Image src={testimonial.profile_image} roundedCircle className="mb-3" />
                                         <p className="text-center">{testimonial.text}</p>
-                                        <h5>{testimonial.name}</h5>
+                                        <h5>{testimonial.testimonial_giver_name}</h5>
                                         <h6 className="d-flex align-items-center">
-                                            {testimonial.companyLogo && <Image src={testimonial.companyLogo} roundedCircle className="me-2" />}
-                                            {testimonial.position}
+                                            {testimonial.company_image && <Image src={testimonial.company_image} roundedCircle className="me-2" />}
+                                            {testimonial.testimonial_giver_position}
                                         </h6>
                                     </div>
                                 </Link>
