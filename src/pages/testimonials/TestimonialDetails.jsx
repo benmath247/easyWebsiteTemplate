@@ -3,41 +3,29 @@ import { useParams } from 'react-router-dom';
 import { Container, Image, Row, Col, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const TestimonialDetails = ({ testimonials }) => {
-    const { testimonialId } = useParams();
+const TestimonialDetails = () => {
+    const { slug } = useParams();
     const [testimonial, setTestimonial] = useState(null);
     const [htmlContent, setHtmlContent] = useState(null);
 
     useEffect(() => {
-        // Find the testimonial by its ID
-        const selectedTestimonial = testimonials[testimonialId];
-        // console.log(selectedTestimonial);
-        setTestimonial(selectedTestimonial);
-    }, [testimonialId, testimonials]);
-
-
-    useEffect(() => {
-        // Fetch HTML content only if testimonial exists
-        if (testimonial) {
-            const fetchHtmlContent = async () => {
-                try {
-                    const response = await fetch(testimonial["file-source"]);
-                    if (response.ok) {
-                        const html = await response.text();
-                        console.log(html);
-                        setHtmlContent(html);
-                        console.log(htmlContent)
-                    } else {
-                        console.error('Failed to fetch HTML content');
-                    }
-                } catch (error) {
-                    console.error('Error fetching HTML content', error);
+        // Fetch the testimonial by slug from the API
+        const fetchTestimonial = async () => {
+            try {
+                const response = await fetch(`/api/testimonial/${slug}/`);
+                if (response.ok) {
+                    const data = await response.json();
+                    setTestimonial(data);
+                } else {
+                    console.error('Failed to fetch testimonial');
                 }
-            };
+            } catch (error) {
+                console.error('Error fetching testimonial', error);
+            }
+        };
 
-            fetchHtmlContent();
-        }
-    }, [testimonial]);
+        fetchTestimonial();
+    }, [slug]);
 
     return (
         <Container>
@@ -45,16 +33,15 @@ const TestimonialDetails = ({ testimonials }) => {
                 {testimonial && (
                     <>
                         <Col md={8} className="d-flex flex-column align-items-center">
-                            <Image src={testimonial.image} roundedCircle className="mb-3" />
-                            <h2>{testimonial.name}</h2>
-                            <p className="">{testimonial.text}</p>
-                            <h6>
-                                <Image src={testimonial.companyLogo} roundedCircle className="" />
-                                {testimonial.position}
+                            <Image src={testimonial.profile_image} roundedCircle className="mb-3" />
+                            <h2>{testimonial.testimonial_giver_name}</h2>
+                            <div dangerouslySetInnerHTML={{ __html: testimonial.testimonial_text }} />
+                            <h6 className="mt-3 d-flex align-items-center">
+                                <Image src={testimonial.company_image} roundedCircle className="mr-2" />
+                                {testimonial.testimonial_giver_position}
                             </h6>
                         </Col>
-                        <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
-                        <Link to="/testimonials">
+                        <Link to="/testimonials" className="mt-3">
                             <Button>Back to All Testimonials</Button>
                         </Link>
                         <Link to="/contact" className='m-2'>
@@ -62,7 +49,6 @@ const TestimonialDetails = ({ testimonials }) => {
                         </Link>
                     </>
                 )}
-                {/* </Col> */}
             </Row>
         </Container>
     );
