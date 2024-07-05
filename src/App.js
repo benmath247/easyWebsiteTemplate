@@ -26,7 +26,7 @@ const App = () => {
         <Route path="/blog" element={<Blog blogs={blogs} preview={false} />} />
         <Route path="/blog/:blogId" element={<BlogDetails blogs={blogs} />} />
         <Route path="/testimonials" element={<Testimonials testimonials={testimonials} />} />
-        <Route path="/testimonials/:testimonialId" element={<TestimonialDetails testimonials={testimonials} />} />
+        <Route path="/testimonials/:slug" element={<TestimonialDetails testimonials={testimonials} />} />
       </Routes>
       <Footer />
     </Router>
