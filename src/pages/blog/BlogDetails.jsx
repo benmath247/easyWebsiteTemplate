@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Container, Card } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
+import './BlogDetails.css'; // Make sure to create this CSS file
 
 const BlogDetails = () => {
     const { blogId } = useParams();
     const [blog, setBlog] = useState(null);
-    const [htmlContent, setHtmlContent] = useState(null);
 
     useEffect(() => {
         const fetchBlog = async () => {
@@ -23,20 +23,20 @@ const BlogDetails = () => {
     }, [blogId]);
 
     return (
-        <Container className="my-5">
+        <Container className="my-5 blog-details-container">
             {blog && (
-                <Card className="shadow-sm">
-                    <Card.Img
-                        variant="top"
+                <div className="blog-content-wrapper">
+                    <img
                         src={blog.image}
-                        style={{ width: '50%', height: '50%' }}
+                        alt={blog.title}
+                        className="blog-image"
                     />
-                    <Card.Body>
-                        <Card.Title>{blog.title}</Card.Title>
-                        <Card.Subtitle className="text-muted mb-4">{blog.date}</Card.Subtitle>
+                    <div className="blog-text">
+                        <h1>{blog.title}</h1>
+                        <h6 className="text-muted mb-4">{blog.date}</h6>
                         <div dangerouslySetInnerHTML={{ __html: blog.text }} className="blog-content" />
-                    </Card.Body>
-                </Card>
+                    </div>
+                </div>
             )}
         </Container>
     );

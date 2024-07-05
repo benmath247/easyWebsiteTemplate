@@ -102,3 +102,38 @@
     border-top: 1px solid #dee2e6;
     text-align: right;
 }
+
+.blog-details-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.blog-image {
+    max-width: 100%;
+    height: auto;
+    margin-right: 20px;
+    flex: 0 0 auto;
+    margin-bottom: 20px;
+}
+
+.blog-text {
+    flex: 1 1 auto;
+    min-width: 300px;
+    /* Adjust this value as needed */
+}
+
+@media (max-width: 768px) {
+    .blog-content-wrapper {
+        flex-direction: column;
+    }
+
+    .blog-image {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
