@@ -29,8 +29,8 @@ const TestimonialDetails = () => {
     return (
         <Container>
             {testimonial &&
-                <Row className="my-5">
-                    <Col md={8} className="d-flex flex-column align-items-center text-center">
+                <Row className="my-5 justify-content-center">
+                    <Col md={8} className="d-flex flex-column align-items-center">
                         <Image src={testimonial.profile_image} roundedCircle className="mb-3" style={{ width: '150px', height: '150px' }} />
                         <h2 className="mb-2">{testimonial.testimonial_giver_name}</h2>
                         <Row className="align-items-center mb-3">
