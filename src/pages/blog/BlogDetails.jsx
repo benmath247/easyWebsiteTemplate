@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
-import './BlogDetails.css'; // Make sure to create this CSS file
+import './Blog.css'; // Make sure to create this CSS file
 
 const BlogDetails = () => {
     const { blogId } = useParams();
