@@ -44,7 +44,7 @@ export default function Home({ blogs }) {
                     {config.blogsection.include && (
                         <Blog preview={config.blogsection.preview} blogs={blogs} />
                     )}
-                    {config.blogsection.include && config.blogsection.includeButton && (
+                    {/* {config.blogsection.include && config.blogsection.includeButton && (
                         <section>
                             <Container>
                                 <div className="d-flex justify-content-center py-3">
@@ -54,7 +54,7 @@ export default function Home({ blogs }) {
                                 </div>
                             </Container>
                         </section>
-                    )}
+                    )} */}
                 </>
             )}
         </div>

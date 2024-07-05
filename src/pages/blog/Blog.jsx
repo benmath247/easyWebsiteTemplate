@@ -46,9 +46,9 @@ const Blog = ({ preview }) => {
                     </div>
                 ))}
             </div>
-            {include && (
+            {preview && include && (
                 <div className="text-center">
-                    <Link to="/all-blogs" className="btn btn-primary">{buttonText}</Link>
+                    <Link to="/blog" className="btn btn-primary">{buttonText}</Link>
                 </div>
             )}
         </div>
