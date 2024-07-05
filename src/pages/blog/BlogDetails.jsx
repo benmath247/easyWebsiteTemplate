@@ -10,7 +10,7 @@ const BlogDetails = () => {
     useEffect(() => {
         const fetchBlog = async () => {
             try {
-                const response = await fetch('https://starfish-app-yfq49.ondigitalocean.app/sites/blog/1/');
+                const response = await fetch(process.env.REACT_APP_BACKEND_URL + 'sites/blog/1/');
                 const data = await response.json();
                 const selectedBlog = data.blogs.find(b => b.id === parseInt(blogId));
                 setBlog(selectedBlog);

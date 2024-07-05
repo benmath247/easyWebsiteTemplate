@@ -9,8 +9,9 @@ const Blog = ({ preview }) => {
     const [buttonText, setButtonText] = useState("");
 
     useEffect(() => {
-        fetch('https://starfish-app-yfq49.ondigitalocean.app/sites/blog/1/')
-            .then(response => response.json())
+        fetch(process.env.REACT_APP_BACKEND_URL + 'sites/blog/1/')
+            .then(response => response.json()
+            )
             .then(data => {
                 setBlogs(data.blogs);
                 setInclude(data.include);

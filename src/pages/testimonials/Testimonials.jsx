@@ -7,7 +7,7 @@ const Testimonials = () => {
     const [config, setConfig] = useState(null);
 
     useEffect(() => {
-        fetch('https://starfish-app-yfq49.ondigitalocean.app/sites/testimonials/1/')
+        fetch(process.env.REACT_APP_BACKEND_URL + 'sites/testimonials/1/')
             .then(response => response.json())
             .then(data => {
                 setConfig(data);

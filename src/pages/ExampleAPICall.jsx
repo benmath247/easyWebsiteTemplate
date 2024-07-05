@@ -6,7 +6,7 @@ const ExampleComponent = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.get('https://starfish-app-yfq49.ondigitalocean.app/sites/faq/1')
+        axios.get(process.env.REACT_APP_BACKEND_URL + 'sites/faq/1')
             .then(response => {
                 setData(response.data);
             })

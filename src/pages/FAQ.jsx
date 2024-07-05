@@ -6,7 +6,7 @@ export default function FAQ() {
     const [config, setConfig] = useState(null);
 
     useEffect(() => {
-        fetch('https://starfish-app-yfq49.ondigitalocean.app/sites/faq/1/')
+        fetch(process.env.BACKEND_URL + 'sites/faq/1/')
             .then(response => response.json())
             .then(data => setConfig(data))
             .catch(error => console.error('Error loading config:', error));
