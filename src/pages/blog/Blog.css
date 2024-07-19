@@ -34,7 +34,7 @@
         /* Switch to row direction on larger screens */
     }
 
-    .blog-image img {
+    .blog-image {
         max-width: 300px;
         max-height: 200px;
         width: auto;
