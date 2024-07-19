@@ -38,8 +38,8 @@ const BlogDetails = () => {
                         className="blog-image"
                     />
                     <div className="blog-text">
-                        <h1>{blog.title}</h1>
-                        <h6 className="text-muted mb-4">{formatDate(blog.date)}</h6>
+                        <h2>{blog.title}</h2>
+                        <h5 className="text-muted mb-4">{formatDate(blog.date)}</h5>
                         <div dangerouslySetInnerHTML={{ __html: blog.text }} className="blog-content" />
                     </div>
                 </div>
