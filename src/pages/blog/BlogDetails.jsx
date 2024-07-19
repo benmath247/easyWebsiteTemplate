@@ -23,18 +23,25 @@ const BlogDetails = () => {
         fetchBlog();
     }, [blogId]);
 
+    const formatDate = (dateString) => {
+        const options = { year: 'numeric', month: 'long', day: '2-digit' };
+        return new Date(dateString).toLocaleDateString('en-US', options);
+    };
+
     return (
         <Container className="my-5 blog-details-container">
             {blog && (
                 <div className="blog-content-wrapper">
-                    <img
-                        src={blog.image}
-                        alt={blog.title}
-                        className="blog-image"
-                    />
+                    <div>
+                        <img
+                            src={blog.image}
+                            alt={blog.title}
+                            className="blog-image"
+                        />
+                    </div>
                     <div className="blog-text">
                         <h1>{blog.title}</h1>
-                        <h6 className="text-muted mb-4">{blog.date}</h6>
+                        <h6 className="text-muted mb-4">{formatDate(blog.date)}</h6>
                         <div dangerouslySetInnerHTML={{ __html: blog.text }} className="blog-content" />
                     </div>
                 </div>
