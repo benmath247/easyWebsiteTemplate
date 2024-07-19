@@ -34,8 +34,8 @@
         /* Switch to row direction on larger screens */
     }
 
-    .blog-image {
-        width: 40%;
+    .blog-image img {
+        size: 40%;
         height: auto;
         /* Limit width on larger screens */
         margin-right: 20px;
