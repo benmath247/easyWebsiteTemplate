@@ -22,7 +22,6 @@ const BlogDetails = () => {
 
         fetchBlog();
     }, [blogId]);
-    debugger;
 
     return (
         <Container className="my-5 blog-details-container">
