@@ -32,13 +32,11 @@ const BlogDetails = () => {
         <Container className="my-5 blog-details-container">
             {blog && (
                 <div className="blog-content-wrapper">
-                    <div>
-                        <img
-                            src={blog.image}
-                            alt={blog.title}
-                            className="blog-image"
-                        />
-                    </div>
+                    <img
+                        src={blog.image}
+                        alt={blog.title}
+                        className="blog-image"
+                    />
                     <div className="blog-text">
                         <h1>{blog.title}</h1>
                         <h6 className="text-muted mb-4">{formatDate(blog.date)}</h6>

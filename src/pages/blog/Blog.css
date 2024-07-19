@@ -38,8 +38,8 @@
         /* width: 40%; */
         height: auto;
         /* Limit width on larger screens */
-        /* margin-right: 20px; */
-        /* margin-bottom: 0; */
+        margin-right: 20px;
+        margin-bottom: 0;
         float: left;
         /* Float image to the left */
     }
