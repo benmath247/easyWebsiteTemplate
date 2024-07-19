@@ -10,10 +10,17 @@ const Blog = ({ preview }) => {
 
     useEffect(() => {
         fetch(process.env.REACT_APP_BACKEND_URL + 'sites/blog/1/')
-            .then(response => response.json()
-            )
+            .then(response => response.json())
             .then(data => {
-                setBlogs(data.blogs);
+                const formattedBlogs = data.blogs.map(blog => ({
+                    ...blog,
+                    formattedDate: new Date(blog.date).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: '2-digit'
+                    })
+                }));
+                setBlogs(formattedBlogs);
                 setInclude(data.include);
                 setButtonText(data.button);
             })
@@ -39,7 +46,7 @@ const Blog = ({ preview }) => {
                                     {/* <p className="card-text blog-card-text">{blog.text}</p> */}
                                 </div>
                                 <div className="card-footer blog-card-footer">
-                                    <small className="text-muted">{blog.date}</small>
+                                    <small className="text-muted">{blog.formattedDate}</small>
                                 </div>
                             </div>
                         </Link>
