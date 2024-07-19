@@ -35,8 +35,11 @@
     }
 
     .blog-image img {
-        size: 40%;
+        max-width: 300px;
+        max-height: 200px;
+        width: auto;
         height: auto;
+
         /* Limit width on larger screens */
         margin-right: 20px;
         margin-bottom: 0;
